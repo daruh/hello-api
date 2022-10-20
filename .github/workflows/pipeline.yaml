@@ -3,9 +3,22 @@ name: CI Checks
 on: [push]
 
 jobs:
+  test:
+    name: Test Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.19
+      - name: Check out code into Go module directory
+        uses: actions/checkout@v2
+      - name: Run Test
+        run: go test ./...
   build:
     name: Build App
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Set up Go 1.x
         uses: actions/setup-go@v2
