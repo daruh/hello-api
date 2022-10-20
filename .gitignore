@@ -15,3 +15,6 @@
 # vendor/
 /.idea/modules.xml
 /.idea/.gitignore
+
+coverage.out
+cover.html
