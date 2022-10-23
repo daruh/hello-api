@@ -72,11 +72,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
-      release_name: Release ${{ github.ref }}
-      body:  |
+        release_name: Release ${{ github.ref }}
+        body:  |
            Still in experiment phase
-      draft: true
-      prerelease: true
+        draft: true
+        prerelease: true
     - name: Upload Release Binary
       uses: actions/upload-release-asset@v1
       env:
