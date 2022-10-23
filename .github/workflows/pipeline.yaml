@@ -73,8 +73,7 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
       release_name: Release ${{ github.ref }}
-      body:  |
-        Still in experiment phase
+      body:  Still in experiment phase
       draft: true
       prerelease: true
     - name: Upload Release Binary
