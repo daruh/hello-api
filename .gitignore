@@ -18,3 +18,5 @@
 
 coverage.out
 cover.html
+/.idea/vcs.xml
+/.idea/workspace.xml
