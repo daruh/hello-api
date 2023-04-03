@@ -8,13 +8,14 @@ import (
 
 func main() {
 
-	addr := ":8080"
+	addr := ":8083"
 
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/translate/hello", rest.TranslateHandler)
 
 	log.Printf("listening on %s\n", addr)
+	log.Println("config map demo")
 
 	log.Fatal(http.ListenAndServe(addr, mux))
 }
