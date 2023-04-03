@@ -40,7 +40,7 @@ func main() {
 	mux.HandleFunc("/translate/hello", rest.TranslateHandler)
 
 	log.Printf("listening on %s\n", addr)
-	log.Println("config map demo")
+	log.Println("config map demo mounted")
 	loadConfig(CONFIG_FILE)
 
 	log.Fatal(http.ListenAndServe(addr, mux))

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: hello-configmap
-  namespace: default
+  namespace: hello
 data:
   configmap-microservice-demo.yaml: |
     message: Hello World

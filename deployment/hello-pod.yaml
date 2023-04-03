@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: hello-configmap
-          image: docker.io/dauh/hello-api:latest
+          image: docker.io/dauh/hello-api:22
           ports:
             - containerPort: 8083
           volumeMounts:
