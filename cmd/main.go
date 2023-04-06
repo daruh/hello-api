@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-const CONFIG_FILE = "/etc/config/configmap-microservice-demo.yaml"
+const CONFIG_FILE = "/etc/config/configmap-microservice-demo1.yaml"
 
 type Config struct {
 	Message string `yaml:"message"`
