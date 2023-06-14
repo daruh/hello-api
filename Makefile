@@ -1,5 +1,8 @@
 GO_VERSION := 1.19  # <1>
 
+KIND=${PWD}/kind
+SERVICE=${PWD}/k8s
+
 .PHONY: install-go init-go
 
 setup: install-go init-go # <2>
@@ -31,3 +34,22 @@ coverage:
 
 report:
 	go tool cover -html=coverage.out -o cover.html
+
+
+#Setup cluster
+.PHONY: create-cluster
+create-cluster:
+	echo 'Creating cluster ...'
+	@cd ${KIND} && kind create cluster --config config.yaml
+	@cd ${KIND} && kubectl apply -f ingress.yaml
+
+.PHONY: local-service
+local-service:
+	@cd ${SERVICE} && kubectl apply -f deployment.yaml
+	@cd ${SERVICE} && kubectl apply -f service.yaml
+
+#Deletes cluster
+.PHONY: clean
+clean:
+	@echo 'Deleting cluster...'
+	kind delete cluster
