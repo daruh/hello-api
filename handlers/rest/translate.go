@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"hello-api/translation"
 	"net/http"
-	"strings"
+	"path"
 )
 
 type Resp struct { // <2>
@@ -20,7 +20,7 @@ func TranslateHandler(w http.ResponseWriter, r *http.Request) {
 	if language == "" {
 		language = "english"
 	}
-	word := strings.ReplaceAll(r.URL.Path, "/", "")
+	word := path.Base(r.URL.Path)
 	translation := translation.Translate(word, language)
 	if translation == "" {
 		language = ""

@@ -12,7 +12,7 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/translate/hello", rest.TranslateHandler)
+	mux.HandleFunc("/translate/", rest.TranslateHandler)
 
 	log.Printf("listening on %s\n", addr)
 
