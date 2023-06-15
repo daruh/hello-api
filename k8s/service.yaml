@@ -5,8 +5,6 @@ metadata:
 spec:
   selector:
     app: hello-api
-  type: LoadBalancer
+#  type: LoadBalancer
   ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 8080
+    - port: 8080

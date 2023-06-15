@@ -41,6 +41,12 @@ report:
 create-cluster:
 	echo 'Creating cluster ...'
 	@cd ${KIND} && kind create cluster --config config.yaml
+
+	MSYS_NO_PATHCONV=1
+	export MSYS_NO_PATHCONV=1
+
+	kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+
 	@cd ${KIND} && kubectl apply -f ingress.yaml
 
 .PHONY: local-service
